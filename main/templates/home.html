@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{% for post in posts.all %}
+<div class="animated fadeInLeft">
+  <div class="post">
+      <div class="section">
+          <h1>{{post.title}}</h1>{{post.date}}
+          written by {{user.first_name}}
+      <p>{{post.body}}</p>
+      <a href="{%url 'detail' post.id%}" class="readmore">Read More</a>
+      <a href="{%url 'delete' post.id%}">delete</a><br>
+      <a href="{%url 'update' post.id%}">update</a>
+      </div>
+  </div>
+</div>
+{%endfor%}
+{%endblock%}

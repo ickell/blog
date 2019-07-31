@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block content%}
+    {% for searched in searched.all %}
+    <div class="animated fadeInLeft">
+        <div class="post">
+            <div class="section">
+        <h1>{{searched.title}}</h1>{{searched.date}}
+        written by {{user.first_name}}
+        <p>{{searched.body}}</p>
+        <a href="#" class="readmore">Read More</a>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+
+{%endblock%}
